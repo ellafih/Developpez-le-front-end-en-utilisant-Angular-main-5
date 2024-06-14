@@ -6,3 +6,23 @@ canvas{
   height: 500px!important;
   margin: auto;
 }
+
+.jo--block{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .jo--countries{
+    margin-left: 30px;
+  }
+  p{
+    color: gray;
+  }
+}
+
+:host ::ng-deep ngx-charts-pie-chart path:hover {
+  opacity: 0.8;
+  stroke: #fff;
+  stroke-width: 2px;
+}
+

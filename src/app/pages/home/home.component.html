@@ -1,19 +1,30 @@
 <div class="Home--page">
   <h2>Medals per Country</h2>
-  <hr />
   <p>{{ (olympics$ | async)?.length }} data loaded</p>
+  <hr />
+  <div class="jo--block">
+    <div class="jo--plays">
+      <p>number of JOs</p>
+      {{ cities }}
+    </div>
+    <div class="jo--countries">
+      <p>number of JOs</p>
+      {{ countries }}
+    </div>
+  </div>
   <div>
     <canvas id="pieChart" width="200" height="200"></canvas>
   </div>
 </div>
 
+
 <ngx-charts-pie-chart class="chart_content"
 [results]="single"
 [labels]="true"
+
 (select)="onSelect($event)"
 >
 </ngx-charts-pie-chart>
 
-//[results]="single"
-//[labels]="showLabels"
-//(select)="onSelect($event)"
+
+

@@ -16,31 +16,32 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
-    //this.olympics$.subscribe(data => {
-      //this.single = data;
-    //});
-    this.olympicService.getOlympics().subscribe(data => {
-      this.single = data;
-    });;
+    this.olympics$.subscribe(data => {
+    var a = [];
+    this.countries = data.length;
+    for (let country of data){
+      a.push({"name":country.country,"value":country.totalmedals})
+      this.cities = country.participations.length
+    };
+     this.single = a;
+    });
   }
 
+  onSelect(event: any): void {
+    console.log(event);
+  }
+
+  countries: number = 0;
+  cities: number = 0;
   single: any[] = [];
-
+  isLoading: boolean = true;
+  error: string = '';
   // options
-    showLegend: boolean = true;
-    //showLabels: boolean = true;
-    explodeSlices: boolean = false;
-    doughnut: boolean = false;
-   // showLegend = true;
-    //showLabels = true;
-    //isDoughnut = true;
-   legendPosition = 'below';
+  showLabels: boolean = true;
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
+    domain: ['#956065', '#A10A28', '#C7B42C', '#AAAAAA']
   };
-  onSelect(data: any): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
-  }
+
 
 }
 
