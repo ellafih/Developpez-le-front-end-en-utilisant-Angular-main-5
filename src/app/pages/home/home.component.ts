@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Olympic } from 'src/app/core/models/Olympic';
 import { OlympicService } from 'src/app/core/services/olympic.service';
+import { Color, ScaleType } from '@swimlane/ngx-charts';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +14,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 export class HomeComponent implements OnInit {
   public olympics$: Observable<Olympic[]> = of();
 
-  constructor(private olympicService: OlympicService) {}
+  constructor(private olympicService: OlympicService, private router: Router) {}
 
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
@@ -27,9 +29,15 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onSelect(event: any): void {
+
+  onSelect(event: { name: any; }): void {
     console.log(event);
+    // Navigate to the line chart with the selected country
+    // this.router.navigate(['/line-chart'], { queryParams: { country: event.name } });
+    this.router.navigate(['/line-chart', event],);
   }
+
+
 
   countries: number = 0;
   cities: number = 0;
@@ -38,8 +46,11 @@ export class HomeComponent implements OnInit {
   error: string = '';
   // options
   showLabels: boolean = true;
-  colorScheme = {
-    domain: ['#956065', '#A10A28', '#C7B42C', '#AAAAAA']
+  colorScheme: Color = {
+    domain: ['#956065', '#b8cbe7', '#89A1DB', '#793e52', '#9780A1'],
+    group: ScaleType.Ordinal,
+    selectable: true,
+    name: 'Country Color',
   };
 
 

@@ -1,7 +1,8 @@
+import { Participation } from './../models/Participation';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +28,19 @@ export class OlympicService {
 
   getOlympics() {
     return this.olympics$.asObservable();
+  }
+
+  getLineChartData(participation: string): Observable<Participation> {
+    return this.http.get<any[]>(this.olympicUrl).pipe(
+      map(data => {
+        // Process and return the data for the line chart based on the selected category
+        const filteredData = data.filter(item => item.name === participation);
+        return filteredData.map(item => ({
+          name: item.name,
+          series: item.series
+        } as unknown as Participation))[0];
+      })
+    );
   }
 
 }

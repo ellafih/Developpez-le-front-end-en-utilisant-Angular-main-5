@@ -1,28 +1,36 @@
-.Home--page{
+.jo--homepage{
   text-align: center;
-}
-canvas{
-  width: 500px!important;
-  height: 500px!important;
-  margin: auto;
+  h2{
+    background-color: #01838f;
+    color: white;
+    width: 20%;
+    margin: auto;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 100;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 5px;
+  }
+  .jo--homepage-blocks{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 30%;
+    margin: 30px auto;
+    .jo--block{
+      border-radius: 15px;
+      border: 2px solid #01838f;
+      padding: 10px;
+      width: 25%;
+    }
+    p{
+      color: gray;
+      margin: 10px 0px;
+    }
+  }
 }
 
-.jo--block{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  .jo--countries{
-    margin-left: 30px;
-  }
-  p{
-    color: gray;
-  }
-}
 
-:host ::ng-deep ngx-charts-pie-chart path:hover {
-  opacity: 0.8;
-  stroke: #fff;
-  stroke-width: 2px;
-}
+
 
