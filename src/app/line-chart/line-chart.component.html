@@ -1,16 +1,39 @@
-<p>line-chart works!</p>
-<ngx-charts-line-chart
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="data"
-  [gradient]="gradient"
-  [xAxis]="showXAxis"
-  [yAxis]="showYAxis"
-  [legend]="showLegend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [xAxisLabel]="xAxisLabel"
-  [yAxisLabel]="yAxisLabel"
-  [timeline]="timeline"
-  >
-</ngx-charts-line-chart>
+
+<div class="jo--linepage">
+  <h2>{{ country }}</h2>
+  <div class="jo--linepage-blocks">
+    <div class="jo--block">
+      <p>Number of entries</p>
+      <span>
+        {{ entries }}
+      </span>
+    </div>
+    <div class="jo--block">
+      <p>Total number medals</p>
+      <span>
+        {{ medals }}
+      </span>
+    </div>
+    <div class="jo--block">
+      <p>Total number of athletes</p>
+      <span>
+        {{ athletes }}
+      </span>
+    </div>
+  </div>
+  <div>
+  </div>
+  <ngx-charts-line-chart class="line-chart"
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="data"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    >
+  </ngx-charts-line-chart>
+</div>
