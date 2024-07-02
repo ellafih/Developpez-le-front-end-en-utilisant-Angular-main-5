@@ -1,4 +1,4 @@
-<div class="jo--homepage">
+<div #ContainerRef class="jo--homepage">
   <h2>Medals per Country</h2>
   <div class="jo--homepage-blocks">
     <div class="jo--block">
@@ -18,7 +18,7 @@
   </div>
 
   <ngx-charts-pie-chart class="chart_content"
-  [view]="view"
+  [view]="[ContainerRef.offsetWidth, 400]"
   [results]="single"
   [labels]="true"
   [scheme]="colorScheme"

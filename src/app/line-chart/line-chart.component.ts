@@ -52,7 +52,6 @@ export class LineChartComponent implements OnInit {
     this.olympics$.subscribe(data => {
       this.processOlympicData(data);
     });
-
   }
 
   private processOlympicData(data: Olympic[]): void {

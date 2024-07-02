@@ -1,6 +1,7 @@
 
-<div class="jo--linepage">
+<div #ContainerRef class="jo--linepage">
   <h2>{{ country }}</h2>
+  <a class="jo--backhome" routerLink=""> Back to Home page</a>
   <div class="jo--linepage-blocks">
     <div class="jo--block">
       <p>Number of entries</p>
@@ -24,7 +25,7 @@
   <div>
   </div>
   <ngx-charts-line-chart class="line-chart"
-    [view]="view"
+    [view]="[ContainerRef.offsetWidth, 400]"
     [scheme]="colorScheme"
     [results]="data"
     [gradient]="gradient"

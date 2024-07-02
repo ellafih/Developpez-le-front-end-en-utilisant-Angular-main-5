@@ -6,14 +6,17 @@
     background-color: #01838f;
     color: white;
     width: 20%;
-    margin: auto;
+    margin: 15px auto;
     padding: 15px;
     border-radius: 10px;
     font-weight: 100;
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 5px;
   }
-
+  .jo--backhome{
+    color: #01838f;
+    font-weight: bold;
+  }
   .jo--linepage-blocks{
     display: flex;
     align-items: center;
