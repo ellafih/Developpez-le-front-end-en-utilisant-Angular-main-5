@@ -3,6 +3,7 @@
     "id": 1,
     "country": "Italy",
     "totalmedals": 96,
+    "totalatheletes": 1128,
     "participations": [
       {
         "id": 1,
@@ -31,6 +32,7 @@
     "id": 2,
     "country": "Spain",
     "totalmedals": 54,
+    "totalatheletes": 948,
     "participations": [
       {
         "id": 1,
@@ -59,6 +61,7 @@
     "id": 3,
     "country": "United States",
     "totalmedals": 345,
+    "totalatheletes": 1888,
     "participations": [
       {
         "id": 1,
@@ -87,6 +90,7 @@
     "id": 4,
     "country": "Germany",
     "totalmedals": 125,
+    "totalatheletes": 1272,
     "participations": [
       {
         "id": 1,
@@ -114,7 +118,8 @@
   {
     "id": 5,
     "country": "France",
-    "totalmedals": 148,
+    "totalmedals": 113,
+    "totalatheletes": 1238,
     "participations": [
       {
         "id": 1,

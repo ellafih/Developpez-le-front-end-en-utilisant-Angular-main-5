@@ -38,12 +38,15 @@
 }
 
 
-:host {
-  display: block;
-  width: 100%;
-}
-
-ngx-charts-line-chart {
-  display: block;
-  max-width: 100%;
+@media screen and (max-width: 600px) {
+  h2{
+    width: 75%!important;
+    font-size: 15px;
+  }
+  .jo--linepage-blocks{
+    width: 100%!important;
+  }
+  ngx-charts-line-chart{
+    overflow: hidden;
+  }
 }

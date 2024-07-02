@@ -1,5 +1,6 @@
 .jo--homepage{
   text-align: center;
+  padding: 15px 0;
   h2{
     background-color: #01838f;
     color: white;
@@ -23,11 +24,32 @@
       border: 2px solid #01838f;
       padding: 10px;
       width: 25%;
+      p{
+        color: gray;
+        margin: 10px 0px;
+        font-weight: 100;
+      }
+      span{
+        font-weight: bold;
+      }
     }
-    p{
-      color: gray;
-      margin: 10px 0px;
-    }
+  }
+  ngx-charts-pie-chart{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h2{
+    width: 75%!important;
+    font-size: 15px;
+  }
+  .jo--homepage-blocks{
+    width: 100%!important;
+  }
+  ngx-charts-pie-chart{
+    overflow: hidden;
   }
 }
 

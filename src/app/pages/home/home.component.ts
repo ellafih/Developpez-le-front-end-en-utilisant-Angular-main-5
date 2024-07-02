@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
   error: string = '';
   // options
   showLabels: boolean = true;
+  view: [number, number] = [700, 400];
   colorScheme: Color = {
     domain: ['#956065', '#b8cbe7', '#89A1DB', '#793e52', '#9780A1'],
     group: ScaleType.Ordinal,

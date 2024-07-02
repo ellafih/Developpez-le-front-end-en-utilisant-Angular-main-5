@@ -3,17 +3,22 @@
   <div class="jo--homepage-blocks">
     <div class="jo--block">
       <p>Number of JOs</p>
-      {{ cities }}
+      <span>
+        {{ cities }}
+      </span>
     </div>
     <div class="jo--block">
       <p>Number of Countries</p>
-      {{ countries }}
+      <span>
+        {{ countries }}
+      </span>
     </div>
   </div>
   <div>
   </div>
 
   <ngx-charts-pie-chart class="chart_content"
+  [view]="view"
   [results]="single"
   [labels]="true"
   [scheme]="colorScheme"
