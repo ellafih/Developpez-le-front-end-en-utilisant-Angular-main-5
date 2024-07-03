@@ -1,6 +1,4 @@
-# OlympicGamesStarter
-
-## git clone the project or download the zip file from the repo
+# git clone the project or download the zip file from the repo
 
 git clone https://github.com/ellafih/Developpez-le-front-end-en-utilisant-Angular-main-5
 
