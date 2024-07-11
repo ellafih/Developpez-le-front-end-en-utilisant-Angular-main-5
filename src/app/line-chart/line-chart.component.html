@@ -1,6 +1,6 @@
 
 <div #ContainerRef class="jo--linepage">
-  <h2>{{ country }}</h2>
+  <h2>{{ countryName }}</h2>
   <a class="jo--backhome" routerLink=""> Back to Home page©</a>
   <div class="jo--linepage-blocks">
     <div class="jo--block">
@@ -24,17 +24,24 @@
   </div>
   <div>
   </div>
-  <ngx-charts-line-chart class="line-chart"
-    [view]="[ContainerRef.offsetWidth, 400]"
-    [scheme]="colorScheme"
-    [results]="data"
-    [gradient]="gradient"
-    [xAxis]="showXAxis"
-    [yAxis]="showYAxis"
-    [showXAxisLabel]="showXAxisLabel"
-    [showYAxisLabel]="showYAxisLabel"
-    [xAxisLabel]="xAxisLabel"
-    [yAxisLabel]="yAxisLabel"
-    >
-  </ngx-charts-line-chart>
+  <ng-template #chartContent>
+      <ngx-charts-line-chart class="line-chart"
+      [view]="[ContainerRef.offsetWidth, 400]"
+      [scheme]="colorScheme"
+      [results]="multi"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      >
+    </ngx-charts-line-chart>
+  </ng-template>
+  <div *ngIf="error; else chartContent" class="error-container">
+    <div class="error-message">
+      <p>{{ error }}</p>
+    </div>
+  </div>
 </div>
